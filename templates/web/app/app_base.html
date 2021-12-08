@@ -1,0 +1,19 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block body %}
+{% block notifications %}
+{% endblock %}
+<section>
+    {% comment %} <div class="container app-two-column"> {% endcomment %}
+        {% comment %} <div id="app-nav">
+            {% block sidebar-nav %}
+                {% include "web/components/app_nav.html" %}
+            {% endblock %}
+        </div> {% endcomment %}
+        <div id="app-content-react">
+            {% block app %}
+            {% endblock %}
+        </div>
+    {% comment %} </div> {% endcomment %}
+</section>
+{% endblock %}

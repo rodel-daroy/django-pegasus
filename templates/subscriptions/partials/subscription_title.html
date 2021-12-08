@@ -1,0 +1,16 @@
+<div class="level">
+  <div class="level-left">
+    <h1 class="title is-size-4">My Subscription</h1>
+  </div>
+  <div class="level-right">
+    {% if user.has_active_subscription %}
+    <span class="tag is-success tooltip">Pro
+      <span class="tooltiptext">You're subscribed to an unlimited Pro plan. High five!</span>
+    </span>
+    {% else %}
+    <span class="tag is-warning is-light tooltip">None
+      <span class="tooltiptext">You're not subscribed to any plan.</span>
+    </span>
+    {% endif %}
+  </div>
+</div>

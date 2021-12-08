@@ -1,0 +1,42 @@
+<aside class="menu">
+  <p class="menu-label is-hidden-tablet-only">
+    Pegasus
+  </p>
+  <ul class="menu-list">
+      {% comment %} <li>
+          <a href="{% url 'pegasus:react_object_lifecycle' %}" {% if active_tab == 'home' %}class="is-active"{% endif %}>
+              <span class="icon"><i class="fa fa-home"></i></span><span class="is-hidden-tablet-only">Examples Home</span>
+          </a>
+      </li>
+      <li>
+          <a href="{% url 'pegasus:payments' %}" {% if active_tab == 'payments' %}class="is-active"{% endif %}>
+              <span class="icon"><i class="fa fa-credit-card"></i></span><span class="is-hidden-tablet-only">Payments</span>
+          </a>
+      </li> {% endcomment %}
+      <li>
+          <a href="{% url 'pegasus:react_object_lifecycle' %}" {% if active_tab == 'react_object_lifecycle' %}class="is-active"{% endif %}>
+              <span class="icon"><i class="fa fa-edit"></i></span><span class="is-hidden-tablet-only">React Object Demo</span>
+          </a>
+      </li>
+      {% comment %} <li>
+          <a href="{% url 'pegasus:tasks' %}" {% if active_tab == 'tasks' %}class="is-active"{% endif %}>
+              <span class="icon"><i class="fa fa-tasks"></i></span><span class="is-hidden-tablet-only">Background Tasks</span>
+          </a>
+      </li> {% endcomment %}
+      {% comment %} <li>
+          <a href="{% url 'pegasus:charts' %}" {% if active_tab == 'charts' %}class="is-active"{% endif %}>
+              <span class="icon"><i class="fa fa-bar-chart-o"></i></span><span class="is-hidden-tablet-only">Charts</span>
+          </a>
+      </li>
+      <li>
+          <a href="{% url 'pegasus:landing_page' %}" >
+              <span class="icon"><i class="fa fa-picture-o"></i></span><span class="is-hidden-tablet-only">Landing Page</span>
+          </a>
+      </li>
+      <li>
+          <a href="{% url 'pegasus:pricing_page' %}" >
+              <span class="icon"><i class="fa fa-external-link"></i></span><span class="is-hidden-tablet-only">Pricing Page</span>
+          </a>
+      </li> {% endcomment %}
+  </ul>
+</aside>

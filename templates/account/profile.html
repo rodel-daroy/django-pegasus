@@ -1,0 +1,123 @@
+{% extends "web/app/app_base.html" %}
+{% block app %}
+<section class="section app-card">
+    <div class="columns">
+        <div id="profile-picture" class="column is-one-quarter">
+            <div>
+              <img class="avatar" src="{{ user.avatar_url}}" >
+              <div id='profile-upload-holder' class="has-text-centered">
+                <label id='profile-upload-label' for="profile-upload" class="custom-file-upload">
+                  Change Picture
+                </label>
+                <input id="profile-upload" type="file" accept="image/*" />
+              </div>
+            </div>
+        </div>
+        <div class="column">
+            <h1 class="title is-size-4">My Details</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    {{ form.email }}
+                  </div>
+                  {{ form.email.errors }}
+                </div>
+                <div class="field">
+                  <label class="label">First Name</label>
+                  <div class="control">
+                    {{ form.first_name }}
+                  </div>
+                  {{ form.first_name.errors }}
+                </div>
+                <div class="field">
+                  <label class="label">Last Name</label>
+                  <div class="control">
+                    {{ form.last_name }}
+                  </div>
+                  {{ form.last_name.errors }}
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <input class="button is-primary" type="submit" value="Save">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block page_js %}
+<script type="application/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const uploadUrl = '{% url "users:upload_profile_image" %}';
+    document.getElementById("profile-upload").onchange = function() {
+      let files = document.getElementById("profile-upload").files;
+      let file = files[0];
+      if (file) {
+        updatePreview(file);
+        uploadImage(file);
+      }
+    };
+    function updatePreview(file) {
+      // https://stackoverflow.com/a/4459419/8207
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        let avatars = document.getElementsByClassName('avatar');
+        for (let i = 0; i < avatars.length; i++) {
+          avatars[i].setAttribute('src', e.target.result);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function uploadImage(file) {
+      // update UI
+      let uploadlabel = document.getElementById("profile-upload-label")
+      uploadlabel.innerHTML = '<span class="icon"><i class="fa fa-refresh"></i></span><span>Uploading...</span>';
+      uploadlabel.classList.add('is-active');
+      // upload to server
+      let formData = new FormData();
+      formData.append("avatar", file);
+      formData.append('csrfmiddlewaretoken', getCookie('csrftoken'));
+      fetch(uploadUrl, {method: "POST", body: formData, credentials: 'same-origin'}).then(
+        function (response) {
+          if (response.ok) {
+            response.text().then(function (text) {
+              // update UI
+              console.log(text);
+              uploadlabel.innerHTML = '<span class="icon"><i class="fa fa-check"></i></span><span>' + text + '</span>';
+              uploadlabel.classList.remove('is-active');
+              uploadlabel.classList.add('has-text-success');
+            });
+          } else {
+            response.text().then(function (errorText) {
+              console.error(errorText);
+              uploadlabel.innerHTML = '<span class="icon"><i class="fa fa-times"></i></span><span>Upload failed!</span>';
+              uploadlabel.classList.add('has-text-danger');
+            });
+          }
+        }
+      );
+    }
+
+    function getCookie(name) {
+      // see: https://docs.djangoproject.com/en/2.2/ref/csrf/
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        let cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          let cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+  });
+</script>
+{% endblock %}

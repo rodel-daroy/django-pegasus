@@ -1,0 +1,333 @@
+#app-content-react,
+#object-lifecycle-home,
+body,
+html,
+body > section,
+.main-content {
+  height: 100%;
+}
+
+.login {
+  padding: 7% 9% 0% 9%;
+  height: 100%;
+}
+
+.register {
+  height: 100%;
+  padding: 1% 5% 0% 5%;
+}
+
+.auth {
+  overflow-x: hidden;
+  //padding: 2%;
+
+  .container-logo {
+    padding: 3%;
+  }
+  .img-box {
+    display: flex;
+  }
+  .logo-box {
+    height: 40%;
+    margin-top: -20%;
+    padding-top: 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: calc(0.375rem - 1px);
+    background-color: #f7fafc !important;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  }
+
+  .background-auth {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+
+  .padding-9p {
+    padding: 9%;
+  }
+
+  .label-input {
+    font-family: "Open sans";
+    font-size: 14px;
+    color: #c7c7c7;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .input-group {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+  }
+  .input {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    height: 50px;
+    font-family: "Cairo";
+    border-radius: 14px;
+    color: #202020;
+  }
+
+  .input-error {
+    background-color: #f5f5f5;
+    border-color: #f75676;
+    height: 50px;
+    font-family: "Cairo";
+    border-radius: 14px;
+    color: #202020;
+  }
+
+  .input:focus {
+    outline: none;
+    border: 2px solid #202020;
+    background-color: white;
+    box-shadow: 0 0 10px #c7c7c7;
+  }
+
+  .input::placeholder {
+    font-family: "Cairo";
+  }
+
+  .button:focus,
+  :focus {
+    outline: none;
+    border: 2px solid #202020;
+    background-color: white;
+    box-shadow: 0 0 10px #c7c7c7;
+  }
+
+  .button-fuchsia {
+    background-color: #e328af;
+    border-radius: 12px;
+    width: 100%;
+    float: right;
+    border: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: "Cairo";
+    text-transform: uppercase;
+    &:active {
+      background-color: #e328af !important;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+    }
+  }
+
+  .button-black {
+    background: linear-gradient(180deg, #111111 0%, #333333 100%);
+    border-radius: 12px;
+    color: white;
+    width: 100%;
+    float: right;
+    border: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: "Cairo";
+    text-transform: uppercase;
+    &:active {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+    }
+  }
+
+  .text-black {
+    color: #202020;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .title {
+    font-family: "Cairo";
+    font-size: 30px;
+  }
+
+  .sub-title {
+    font-family: "Open sans";
+    font-size: 16px;
+  }
+
+  .center-horizontal {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .center-vertical {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .i-pass-active {
+    color: #e328af;
+    margin: auto 10px;
+    background-color: #f5f5f5;
+  }
+
+  .i-pass-disabled {
+    color: #c7c7c7;
+    margin: auto 10px;
+    background-color: #f5f5f5;
+  }
+
+  .underline {
+    text-decoration: underline #202020;
+  }
+
+  .illustration-image {
+    z-index: 2;
+    width: 90%;
+    position: relative;
+  }
+
+  .illustration-card {
+    width: 85%;
+    height: 50%;
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    z-index: -3;
+  }
+
+  .logo-container {
+    width: 85%;
+    position: relative;
+    margin-top: 12%;
+  }
+
+  .offer-login {
+    font-family: "Poppins";
+    color: #d75aac;
+    font-size: 50px;
+    position: relative;
+  }
+
+  .c-width-login {
+    width: 65%;
+  }
+
+  .forget-password {
+    margin-top: 10%;
+  }
+  .full-width {
+    width: 100%;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1120px) {
+  .background-auth {
+    margin-top: 4% !important;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 720px) {
+  .background-auth {
+    margin-top: 6% !important;
+  }
+}
+
+@media (min-width: 120px) and (max-width: 539px) {
+  .background-auth {
+    margin-top: 12% !important;
+  }
+}
+
+@media only screen and (max-width: 1480px) {
+  .auth {
+    .logo-box {
+      height: 35%;
+    }
+    .container-logo {
+      padding-top: 7%;
+    }
+    .offer-login {
+      margin-top: 20px;
+      font-size: 40px;
+    }
+  }
+  .c-width-login {
+    width: 75% !important;
+  }
+
+  .login {
+    padding: 7% 5% 0% 9%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .card-container-register {
+    flex: 0 0 33.33333% !important;
+    max-width: 33.33333% !important;
+    margin-top: 3%;
+  }
+}
+
+@media only screen and (max-width: 1210px) {
+  .auth {
+    .container-logo {
+      padding-top: 14%;
+    }
+    .logo-box {
+      height: 30%;
+    }
+    .offer-login {
+      margin-top: 5px;
+      font-size: 35px;
+    }
+    .background-auth {
+      margin-top: 4%;
+    }
+  }
+  .c-width-login {
+    width: 80% !important;
+  }
+  .login {
+    padding: 7% 3% 0% 9%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .auth {
+    .container-logo {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-content {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 459px) {
+  .title {
+    font-size: 25px !important;
+  }
+
+  .sub-title {
+    font-size: 14px !important;
+  }
+
+  .button-fuchsia {
+    font-size: 14px !important;
+  }
+
+  .button-black {
+    font-size: 14px !important;
+  }
+
+  .main-content {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .c-width-login {
+    width: 95% !important;
+  }
+  .register {
+    padding: 0% 1% 0% 1%;
+  }
+}

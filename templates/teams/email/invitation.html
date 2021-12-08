@@ -1,0 +1,33 @@
+{% extends "mails/base.html" %}
+
+{% block body %}
+
+<tr>
+    <td class="tbody-container">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="td-container">
+                        <h3 class="ff-cairo fs-25 fw-normal"> Hi! {{invitation.email}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-container">
+                        <h4 class="ff-open-sans fs-18 ">You've been invited by {{ invitation.invited_by.first_name }} {{invitation.invited_by.last_name}} to join Mailerrize system!</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-container text-center">
+                        <div class="button-reset">
+                            <a href="{{ invitation_url }}"
+                            class="a-reset"
+                            >Accept invitation </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
+
+{% endblock %}

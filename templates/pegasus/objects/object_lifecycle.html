@@ -1,0 +1,149 @@
+{% extends "pegasus/examples_base.html" %}
+{% load static %}
+{% block app %}
+{% comment %} <section class="section app-card">
+  <div class="columns ">
+    <div class="column is-one-quarter has-text-centered">
+      <img alt="{{ framework_name }}" src="{{ framework_icon }}" style="max-height: 160px;" />
+    </div>
+    <div class="column">
+      <h1 class="title">{{ framework_name }} Object Lifecycle Demo</h1>
+      <h2 class="subtitle">
+        A single-page interactive data model and UI example.
+      </h2>
+      <div class="content">
+        <p>
+          This is an interactive data model and UI example using
+          <a href="https://www.django-rest-framework.org/" target="_blank">Django Rest Framework</a> and
+          <a href="{{ framework_url }}" target="_blank">{{ framework_name }}</a>.
+          It demonstrates performing simple create, read, update and delete (CRUD) operations on an example
+          "Employee" data model.
+        </p>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+<div id="object-lifecycle-home"></div>
+{% endblock %}
+{% block page_js %}
+<script type="application/javascript">
+  // initialize any page specific stuff here
+  // static files that are used by the page javascript.
+  var STATIC_FILES = {
+    'default_avatar': "{% static '/images/img/avatar/profile_pic_default.jpeg' %}",
+    'mailerrize_logo': "{% static 'images/favicons/android-chrome-192x192.png' %}",
+    'mailerrize_logo_150': "{% static 'images/favicons/mstile-150x150.png' %}",
+    'mailerrize_logo_32': "{% static 'images/favicons/favicon-32x32.png' %}",
+    'mailerrize_logo_complete': "{% static 'images/favicons/Mailerrize-logo.svg' %}",
+    'mailerrize_icon': "{% static 'images/favicons/Mailerrize-icon.svg' %}",
+    'background_auth': "{% static 'images/favicons/Background_auth.svg' %}",
+    'illustration_login': "{% static 'images/favicons/illustration-login.svg' %}",
+    'undraw_empty': "{% static 'images/undraw/undraw_empty.svg' %}",
+    'undraw_alert': "{% static 'images/undraw/undraw_alert.svg' %}",
+    'argon_react_white': "{% static 'images/favicons/android-chrome-192x192.png' %}",
+    'argon_blue': "{% static 'images/img/brand/blue.png'%}",
+    'team_1': "{% static 'images/img/theme/team-1.jpg' %}",
+    'team_2': "{% static 'images/img/theme/team-2.jpg' %}",
+    'team_3': "{% static 'images/img/theme/team-3.jpg' %}",
+    'team_4': "{% static 'images/img/theme/team-4.jpg' %}",
+    'team_5': "{% static 'images/img/theme/team-5.jpg' %}",
+    'argon_react': "{% static 'images/img/brand/argon-react.png' %}",
+    'vue': "{% static 'images/img/theme/vue.jpg' %}",
+    'react': "{% static 'images/img/theme/react.jpg' %}",
+    'sketch': "{% static 'images/img/theme/sketch.jpg' %}",
+    'angular': "{% static 'images/img/theme/angular.jpg' %}",
+    'bootstrap': "{% static 'images/img/theme/bootstrap.jpg' %}",
+    'google': "{% static 'images/img/icons/common/google.svg' %}",
+    'github': "{% static 'images/img/icons/common/github.svg'  %}",
+    'img1': "{% static 'images/img/theme/img-1-1000x600.jpg'  %}",
+    'bitcoin': "{% static 'images/img/icons/cards/bitcoin.png' %}",
+    'gb': "{% static 'images/img/icons/flags/GB.png' %}",
+    'de': "{% static 'images/img/icons/flags/DE.png' %}",
+    'us': "{% static 'images/img/icons/flags/US.png' %}",
+    'img2': "{% static 'images/img/theme/img-1-1000x900.jpg' %}",
+    'visa': "{% static 'images/img/icons/cards/visa.png' %}",
+    'paypal': "{% static 'images/img/icons/cards/paypal.png' %}",
+    'mastercard': "{% static 'images/img/icons/cards/mastercard.png' %}",
+    'profilecover': "{% static 'images/img/theme/profile-cover.jpg' %}",
+    'sales_force': "{% static '/images/img/theme/salesforseblue.png'%}",
+    'slack': "{% static '/images/img/theme/slack.png'%}",
+    'zapier': "{% static '/images/img/theme/zapier.png'%}",
+    'pipe_drive': "{% static '/images/img/theme/pipedrive.jpeg'%}",
+    'hub_spot': "{% static '/images/img/theme/hubspot.png'%}",
+    'save_icon_1': "{% static '/images/img/icons/save/vector-1@2x.svg'%}",
+    'save_icon_2': "{% static '/images/img/icons/save/vector-2@2x.svg'%}",
+    'save_icon_3': "{% static '/images/img/icons/save/vector@2x.svg'%}",
+    'setting_dot': "{% static '/images/img/icons/settings/dot@2x.svg'%}",
+    'delete_icon': "{% static '/images/img/icons/delete/vector-14@2x.svg'%}",
+    'delete_icon2': "{% static '/images/img/icons/delete/vector-14@2x2.svg'%}",
+    'arrow_back': "{% static '/images/img/icons/arrow-back/arrow-back.svg'%}",
+    'arrow_pink': "{% static '/images/img/icons/common/arrow@2x.svg'%}",
+    'arrow_purple': "{% static '/images/img/icons/common/arrow2@2x.svg'%}",
+    'arrow_right': "{% static '/images/img/icons/arrow-back/arrow-right.svg'%}",
+    'arrow_left': "{% static '/images/img/icons/arrow-back/arrow-left.svg'%}",
+    'search_icon': "{% static '/images/img/icons/search/vector-3@2x.svg'%}",
+    'angle_left_dark': "{% static '/images/img/icons/angle_left/vector-15@2x.svg'%}",
+    'angle_left_light': "{% static '/images/img/icons/angle_left/vector-16@2x.svg'%}",
+    'angle_right_dark': "{% static '/images/img/icons/angle_right/vector-17@2x.svg'%}",
+    'angle_right_light': "{% static '/images/img/icons/angle_right/vector-18@2x.svg'%}",
+    'settings': "{% static '/images/img/icons/settings/vector-13@2x.svg'%}",
+    'settings_pink': "{% static '/images/img/icons/settings/vector-13@2x-pink.svg'%}",
+    'inbox': "{% static '/images/img/icons/inbox/vector-72@2x.svg'%}",
+    'menu_options': "{% static '/images/img/icons/menu_options/dot@2x.svg'%}",
+    'dashboard': "{% static '/images/img/icons/sidebar/dashboard.svg'%}",
+    'dashboard_pink': "{% static '/images/img/icons/sidebar/dashboard-pink.svg'%}",
+    'campaigns': "{% static '/images/img/icons/sidebar/campaigns.svg'%}",
+    'campaigns_pink': "{% static '/images/img/icons/sidebar/campaigns-pink.svg'%}",
+    'campaigns_list': "{% static '/images/img/icons/sidebar/campaigns-list.svg'%}",
+    'campaigns_list_pink': "{% static '/images/img/icons/sidebar/campaigns-list-pink.svg'%}",
+    'audiences': "{% static '/images/img/icons/sidebar/audiences.svg'%}",
+    'audiences_pink': "{% static '/images/img/icons/sidebar/audiences-pink.svg'%}",
+    'audiences_list': "{% static '/images/img/icons/sidebar/audience-list.svg'%}",
+    'audiences_list_pink': "{% static '/images/img/icons/sidebar/audience-list-pink.svg'%}",
+    'mail_icon': "{% static '/images/img/icons/sidebar/mail-icon.svg'%}",
+    'mail_icon_pink': "{% static '/images/img/icons/sidebar/mail-icon-pink.svg'%}",
+    'settings_sidebar': "{% static '/images/img/icons/sidebar/settings.svg'%}",
+    'settings_sidebar_pink': "{% static '/images/img/icons/sidebar/settings-pink.svg'%}",
+    'billing': "{% static '/images/img/icons/sidebar/billing.svg'%}",
+    'billing_pink': "{% static '/images/img/icons/sidebar/billing-pink.svg'%}",
+    'leads': "{% static '/images/img/icons/sidebar/leads.svg'%}",
+    'leads_pink': "{% static '/images/img/icons/sidebar/leads-pink.svg'%}",
+    'schedule': "{% static '/images/img/icons/sidebar/schedule.svg'%}",
+    'schedule_pink': "{% static '/images/img/icons/sidebar/schedule-pink.svg'%}",
+    'team_setting': "{% static '/images/img/icons/sidebar/team-setting.svg'%}",
+    'team_setting_pink': "{% static '/images/img/icons/sidebar/team-setting-pink.svg'%}",
+    'unsubscribes': "{% static '/images/img/icons/sidebar/unsubscribes.svg'%}",
+    'unsubscribes_pink': "{% static '/images/img/icons/sidebar/unsubscribes-pink.svg'%}",
+    'warming': "{% static '/images/img/icons/sidebar/warming.svg'%}",
+    'warming_pink': "{% static '/images/img/icons/sidebar/warming-pink.svg'%}",
+    'email_account': "{% static '/images/img/icons/sidebar/email-account.svg'%}",
+    'email_account_pink': "{% static '/images/img/icons/sidebar/email-account-pink.svg'%}",
+    'integration': "{% static '/images/img/icons/sidebar/integration.svg'%}",
+    'integration_pink': "{% static '/images/img/icons/sidebar/integration-pink.svg'%}",
+    'mail_gray': "{% static '/images/img/icons/common/vector-4@2x.svg'%}",
+    'arrow_follow': "{% static '/images/img/icons/common/vector-26@2x.svg'%}",
+    'arrow_upload': "{% static '/images/img/icons/common/vector-23@2x.svg'%}",
+    'arrow_upload2': "{% static '/images/img/icons/common/vector-24@2x.svg'%}",
+    'attach': "{% static '/images/img/icons/common/vector-25@2x.svg'%}",
+    'img_icon': "{% static '/images/img/icons/campaign/img-icon.svg'%}",
+    'video_icon': "{% static '/images/img/icons/campaign/film.svg'%}",
+    'music_icon': "{% static '/images/img/icons/campaign/vector-13@2x.svg'%}",
+    'doc_icon': "{% static '/images/img/icons/campaign/vector-12@2x.svg'%}",
+    'delete_x': "{% static '/images/img/icons/delete_x/vector-39@2x.svg'%}",
+    'delete_fuchsia': "{% static '/images/img/icons/delete_fuchsia/vector-48@2x.svg'%}",
+    'clock': "{% static '/images/img/icons/clock/clock.svg'%}",
+    'favorites': "{% static '/images/img/icons/favorites/favorites.svg'%}",
+    'config': "{% static '/images/img/icons/table/config.png'%}",
+    'points': "{% static '/images/img/icons/table/points.png'%}",
+    'star_gold': "{% static '/images/img/icons/table/star-gold.svg'%}",
+    'star_gray': "{% static '/images/img/icons/table/star-gray.svg'%}",
+    'trash_icon': "{% static '/images/img/icons/table/trash-icon.png'%}",
+    'save': "{% static '/images/img/icons/campaign/save.svg'%}",
+    'trash': "{% static '/images/img/icons/campaign/trash.svg'%}",
+
+  };
+</script>
+<script src="{% static 'rest_framework/js/coreapi-0.1.1.js' %}"></script>
+{% block framework_bundle %}
+{% endblock %}
+{% endblock %}

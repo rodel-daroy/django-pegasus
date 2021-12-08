@@ -1,0 +1,48 @@
+attrs
+Django
+django-allauth==0.31.0
+psycopg2-binary
+djangorestframework
+coreapi  # DRF schemas and docs
+stripe
+dj-stripe
+django-anymail[mailgun]  # email services
+celery-progress #Celery Progress Bars for Django
+celery
+celery[redis]
+django-decouple
+pip-tools #A set of command line tools 
+django-crontab #dead simple crontab powered job scheduling for django
+sentry_sdk #sentry-python - Sentry SDK for Python
+Collectfast #A faster collectstatic command.
+django-celery-results==2.0.1 #Celery Result Backends using the Django ORM/Cache framework
+django_crontab  #dead simple crontab powered job scheduling for django (1.8+).
+django-celery-beat #This extension enables you to store the periodic task schedule in the database.
+django-extensions #Django Extensions is a collection of custom extensions for the Django Framework.
+django-filter #Django-filter is a reusable Django application allowing users to declaratively add dynamic QuerySet filtering from URL parameters.
+drf-yasg #Generate real Swagger/OpenAPI 2.0 specifications from a Django Rest Framework API.
+django-debug-toolbar #The Django Debug Toolbar is a configurable set of panels that display various debug information about the current request/response and when clicked, display more details about the panel’s content.
+django-debug-toolbar-request-history #Request History Panel for Django Debug Toolbar
+django-cors-headers #A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses. This allows in-browser requests to your Django application from other origins.
+django-google-api #django-google-api is a library to use Google API with Django
+django-rest-auth #Create a set of REST API endpoints for Authentication and Registration
+django-rest-framework-social-oauth2 #This module provides a python-social-auth and oauth2 support for django-rest-framework.
+# django-rest-framework-jwt-oauth2 #A generic api for oauth2
+# djangorestframework-jwt #JSON Web Token Authentication support for Django REST Framework
+pandas #Powerful data structures for data analysis, time series, and statistics
+pytracking #Email open and click tracking
+lxml #Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.
+django-ipware==1.1.6 #A Django utility application that returns client's real IP address
+essential-generators #Generate fake data for application testing based on simple but flexible templates.
+imap-tools #Work with email and mailbox by IMAP
+
+
+
+
+
+
+
+
+
+
+

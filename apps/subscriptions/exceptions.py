@@ -1,0 +1,4 @@
+
+
+class SubscriptionConfigError(Exception):
+    pass

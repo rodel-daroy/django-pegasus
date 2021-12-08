@@ -1,0 +1,36 @@
+# Ignore artifacts:
+.vscode
+build
+coverage
+requirements
+webpack.config.js
+
+# Node
+node_modules
+
+# Django
+templates
+apps
+mail
+
+# Static
+static
+media
+
+# Git
+.git
+.gitignore
+README.md
+
+# Template
+argon
+
+# Docs
+docs
+
+# JavaScript
+assets/styles
+assets/vendor
+assets/.env.dev
+assets/.env.prod
+assets/.env.dev

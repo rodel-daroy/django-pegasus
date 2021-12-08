@@ -1,0 +1,6 @@
+We encountered a problem with your email account {{ email_account }} and we have disabled it.
+
+Please check your email account settings.
+
+Regards,
+The Mailerrize Team

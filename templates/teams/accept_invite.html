@@ -1,0 +1,61 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+<section class="section container text-center">
+    <div class="columns">
+        <div class="column is-one-third ">
+            <img src="{% static 'images/favicons/android-chrome-512x512.png' %}" alt="Welcome!" width="150" height="140" class="mt-5">
+        </div>
+        {% if not invitation.is_accepted %}
+        <div id="tagline" class="column mt-5">
+            <h1 class="title is-size-2 ff-cairo tc-blue fw-bold">Accept Invitation?</h1>
+            <h2 class="subtitle is-size-4 mb-4">
+                You've been invited to join {{ invitation.team.name }} of Mailerrize
+                by {{ invitation.invited_by.first_name }}.
+            </h2>
+            {% if request.user.is_authenticated %}
+            <form action="{% url 'teams:accept_invitation_confirm' invitation.id %}" method="post">
+
+                {% if account_exists %}
+                    <a class="button is-primary is-large mt-2"
+                        href="{% if request.is_secure %}HTTPS{% else %}HTTP{% endif %}://{{ request.META.HTTP_HOST }}/app/auth/login?email={{ invitation.email }}&invitation_id={{ invitation.id }}">
+                        Login to Accept invitation
+                    </a>
+                {% else %}
+                    <a class="button is-primary is-large"
+                        href="{% if request.is_secure %}HTTPS{% else %}HTTP{% endif %}://{{ request.META.HTTP_HOST }}/app/auth/register?email={{ invitation.email }}&invitation_id={{ invitation.id }}">
+                        Create Account to Accept
+                    </a>
+                {% endif %}
+
+            </form>
+            {% else %}
+            <p class="buttons">
+                {% if account_exists %}
+                    <a class="button is-primary is-large"
+                        href="{% if request.is_secure %}HTTPS{% else %}HTTP{% endif %}://{{ request.META.HTTP_HOST }}/app/auth/login?email={{ invitation.email }}&invitation_id={{ invitation.id }}">
+                        Login with {{ invitation.email }} to Accept
+                    </a>
+                {% else %}
+                    <a class="button is-primary is-large"
+                        href="{% if request.is_secure %}HTTPS{% else %}HTTP{% endif %}://{{ request.META.HTTP_HOST }}/app/auth/register?email={{ invitation.email }}&invitation_id={{ invitation.id }}">
+                        Create Account to Accept
+                    </a>
+                {% endif %}
+            </p>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="column" id="tagline">
+            <h2 class="subtitle is-size-5">
+                Sorry, it looks like that invitation has already been accepted or expired.
+            </h2>
+            <h2 class="subtitle is-size-5">
+                If you think this is a mistake, ask your team administrator to invite you again!
+            </h2>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

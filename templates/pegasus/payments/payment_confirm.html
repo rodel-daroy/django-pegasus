@@ -1,0 +1,21 @@
+{% extends "pegasus/examples_base.html" %}
+{% load static %}
+{% block app %}
+<section class="section app-card">
+    <div class="columns columns-reversed">
+        <div class="column">
+            <img src="{% static 'images/undraw/undraw_to_the_stars.svg' %}" alt="You're Off!">
+        </div>
+        <div id="tagline" class="column">
+            <h1 class="title is-size-2">Hooray!</h1>
+            <h2 class="subtitle is-size-4">
+                You just completed a sample payment.<br>Wasn't that easy?
+            </h2>
+            <p class="has-text-grey">
+                To see your shiny new payment or make another, you can head back to the
+                <a href="{% url 'pegasus:payments' %}">payments demo</a>.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

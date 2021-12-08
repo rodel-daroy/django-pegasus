@@ -1,0 +1,6 @@
+Hi {{ user.full_name }}, hope that you are fine
+
+Welcome to Mailerrize, the place where you are going to be able to control your email marketing
+
+Regards
+The MailSaas Team

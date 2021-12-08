@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--IE compatibility-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile friendly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'web/components/meta.html' %}
+    {% include 'web/components/favicon.html' %}
+    <link rel="stylesheet" href="{% static 'css/react-draft-wysiwyg.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'vendor/fullcalendar/dist/fullcalendar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/sweetalert2/dist/sweetalert2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/quill/dist/quill.core.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'vendor/nucleo/css/nucleo.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    <link rel="stylesheet" href="{% static 'css/errors.css' %}">
+    <script src="https://use.fontawesome.com/72135c02f1.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Poppins&family=OpenSans&display=swap" rel="stylesheet">
+    {% if GOOGLE_ANALYTICS_ID %}
+    {% include 'web/components/google_analytics.html' %}
+    {% endif %}
+    {% if FACEBOOK_PIXEL_ID %}
+    {% include 'web/components/facebook_pixel.html' %}
+    {% endif %}
+    {% if INTERCOM_APP_ID %}
+    {% include 'web/components/intercom_widget.html' %}
+    {% endif %}
+    {% block page_head %}
+    {% endblock %}
+    <style>
+        .container {
+            width: 100%;
+        }
+        .ff-cairo {
+            font-family: 'Cairo', sans-serif;
+        }
+        .ff-open-sans {
+            font-family: 'Open sans', sans-serif;
+        }
+        .fw-normal {
+            font-weight: 400;
+        }
+        .fw-bold{
+            font-weight: bold;
+        }
+        .tc-black {
+            color: black;
+        }
+        .tc-blue {
+            color: #000041;
+        }
+        .mt-2 {
+            margin-top: 2%;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .button {
+            background-color: #e328af;
+            border-radius: 12px ;
+            border: 2px solid #e328af;
+            min-width: 400px;
+            line-height: 40px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            font-family: 'Cairo';
+            text-transform: uppercase;
+            color: white !important;
+            text-align: center;
+            text-decoration: none;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+
+<body class="g-sidenav-hidden">
+    {% comment %} {% block top_nav %}
+    {% include 'web/components/top_nav.html' %}
+    {% endblock %} {% endcomment %}
+    {% comment %} {% block messages %}
+    {% include 'web/components/messages.html' %}
+    {% endblock %} {% endcomment %}
+    {% block body %}
+    {% endblock %}
+    {% comment %} {% block footer %}
+    {% include 'web/components/footer.html' %}
+    {% endblock %} {% endcomment %}
+    {% block page_js %}
+    {% endblock %}
+    {% comment %} {% include 'web/components/messages-js.html' %} {% endcomment %}
+    {% comment %} {% include 'web/components/navbar-js.html' %} {% endcomment %}
+</body>
+
+</html>

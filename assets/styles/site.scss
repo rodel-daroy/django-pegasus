@@ -1,0 +1,15 @@
+@charset "utf-8";
+// any customizations you want to make to bulma should go here
+// see https://bulma.io/documentation/customize/ for more information
+
+$link: hsl(217, 71%, 53%);  // copied from bulma
+$primary: $link;  // make link-blue the primary color
+$bg-grey: hsl(0, 0%, 98%);
+$default-shadow: 0 2px 4px rgba(55, 63, 67, 0.3);
+$body-background-color: $bg-grey;
+
+$navbar-item-active-color: $link;
+$menu-item-active-background-color: $link;
+
+@import "~bulma/bulma";
+@import "app/_all";

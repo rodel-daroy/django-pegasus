@@ -1,0 +1,24 @@
+$text_gray: rgba(112, 117, 121, 1);
+.stats-warming {
+  .title {
+    font-size: 25px;
+  }
+  .subtitle_1_container {
+    padding-bottom: 25px;
+    .subtitle_1 {
+      color: $text_gray;
+      font-size: 20px;
+    }
+  }
+
+  .subtitle_2 {
+    color: black;
+    font-size: 20px;
+  }
+
+  .number_result {
+    color: black;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}

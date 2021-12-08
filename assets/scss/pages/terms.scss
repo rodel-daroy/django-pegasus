@@ -1,0 +1,76 @@
+.terms-back {
+  font-family: "Poppins", Helvetica;
+  overflow-x: hidden;
+
+  .search-input {
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .search-input:focus{
+    border-color: #ff60c6;
+  }
+
+  .term-title {
+    font-size: 20px;
+    color: #000041;
+    margin-bottom: 15px;
+  }
+  .term-content {
+    font-size: 16px;
+    text-align: justify;
+    font-family: 'Open sans';
+    color: rgb(113, 117, 121);
+  }
+  .no_data {
+    text-align: center;
+    margin-top: 30px;
+    padding: 40px;
+
+    p {
+      font-family: "Poppins", Helvetica;
+      margin-top: 15px;
+    }
+  }
+  .spacing {
+    height: 10px;
+  }
+}
+.auth-terms {
+  overflow-x: hidden;
+  padding: 30px;
+  border-radius: calc(0.375rem - 1px);
+  background-color: #172b4d;
+  .content {
+    .row {
+      background-color: #172b4d;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+  .title_page_container {
+    color: white !important;
+  }
+}
+@media (max-width: 768px) {
+  .terms-back {
+    .term-title {
+      font-size: 16px;
+    }
+    .term-content {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .terms-back {
+    .term-title {
+      font-size: 12px;
+    }
+    .term-content {
+      font-size: 8px;
+    }
+  }
+}

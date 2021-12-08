@@ -1,0 +1,21 @@
+.card-container {
+    height: 254px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disabled-text {
+    text-align: center !important;
+    color: #ac161693 !important;
+    width: 90% !important;
+}
+
+.mh-15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.bold-txt {
+    font-weight: 700;
+}

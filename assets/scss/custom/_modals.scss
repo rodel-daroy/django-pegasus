@@ -1,0 +1,133 @@
+//color variables
+$page_active_color: rgb(255, 96, 198);
+$color_details: rgb(194, 194, 194);
+$text_color: rgba(31, 31, 31, 1);
+$text_gray: rgba(112, 117, 121, 1);
+$text_purple: #32325d;
+$button_color: rgba(255, 57, 188, 1);
+
+.modal-customized {
+  .title-modal {
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000041 !important;
+  }
+  .arrow-back {
+    cursor: pointer;
+    height: 22px;
+    width: 19px;
+    margin-top: 3px;
+  }
+  .color-button {
+    background-color: $button_color;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    p {
+      padding: 0px !important;
+      margin: 0;
+    }
+  }
+  .color-button:hover {
+    background-color: $button_color !important;
+    color: white;
+    font-weight: bold;
+  }
+  .MuiOutlinedInput-root {
+    background-color: #eeeeee;
+    border: none;
+  }
+  .MuiTextField-root:active {
+    border: 2px solid $button_color;
+  }
+  .text-csv {
+    color: $button_color;
+    font-size: 22px;
+    text-align: center;
+    background-color: #ffeeef;
+    width: 100%;
+    height: 190px;
+    border: 3px dashed $button_color;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-header,
+  .modal-content,
+  .card-header,
+  .card-body,
+  .card {
+    border-radius: 20px !important;
+  }
+  .form-control {
+    color: rgba(31, 31, 31, 1);
+    font-weight: 600;
+  }
+  .sub-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #32325d;
+  }
+  .text-delete {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000041;
+    padding: 2% 5%;
+    font-family: "Poppins" Helvetica;
+  }
+  .icon-delete {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+  .label-modal {
+    font-size: 12px;
+    color: rgba(112, 117, 121, 1);
+    font-weight: bold;
+  }
+  .input-customized {
+    background-color: #eeeeee;
+    caret-color: $button_color;
+    border-color: #eeeeee;
+    font-family: "Poppins", Helvetica;
+    height: 40px;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $button_color;
+    border-color: $button_color;
+  }
+  .custom-control-input:checked ~ .custom-control-label:active {
+    background-color: $button_color;
+    border-color: $button_color;
+  }
+  .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    background-color: $button_color;
+    border-color: $button_color;
+  }
+  .nav-pills .nav-link {
+    color: rgba(112, 117, 121, 1);
+  }
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: $button_color;
+    color: white;
+  }
+  .custom-control-label::before {
+    border: 1px solid rgba(112, 117, 121, 1);
+  }
+  .form-control:focus {
+    border-color: $button_color;
+    background-color: white;
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+}
+.modal-backdrop {
+  background-color: rgba(0, 0, 52, 0.5);
+}

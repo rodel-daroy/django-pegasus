@@ -1,0 +1,105 @@
+@import '../../node_modules/bulma/sass/utilities/initial-variables';
+
+#pricing-page-head
+  background-image: url("/static/images/pegasus/stars-pano-banner.jpg")
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center bottom
+  +desktop
+    min-height: 400px
+  .title
+    color: $white
+  .subtitle
+    color: $white
+  .navbar-item, .navbar-item .navbar-link
+    color: rgba($white, .7)
+    &:hover
+      color: $white
+      background-color: inherit
+
+$subtitle-padding: 2em
+#plans
+  margin-bottom: 2em
+  +desktop
+    margin-top: -100px
+  +touch
+    margin-top: 15px
+  #plan-wrapper
+    display: flex
+    align-items: stretch
+    // touch and down - show plans in single column
+    +touch
+      flex-direction: column
+      align-items: center
+    .plan
+      @extend .has-text-centered
+      position: relative
+      margin: 1em
+      // size plans on desktop and above
+      +desktop
+        width: 33.3333% // change to match number of plans
+      +touch
+        max-width: 480px
+        background-color: $white
+        box-shadow: $default-shadow
+
+      .plan-summary
+        background-color: $white
+        margin-top: 1em
+        padding: 1em
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        min-height: 305px  // set to the tallest summary element to size all the same
+        +desktop-only
+          min-height: 335px
+        .subtitle
+          padding-left: $subtitle-padding
+          padding-right: $subtitle-padding
+          color: $grey
+
+        .price
+          @extend .is-size-3
+          line-height: 1
+        .price-detail
+          margin-top: 0
+          color: $grey
+        .button
+          margin: 1em
+      .plan-details
+        padding: 1em
+        +desktop
+          margin-top: 2em
+        +touch
+          margin-top: -1em
+        ul li
+          font-weight: bold
+          padding: .2em
+
+      &.is-active
+        // show active first on touch mode
+        +touch
+          order: -1
+
+        .plan-highlight
+          position: absolute
+          top: -8px
+          color: $white
+          width: 100%
+          background-color: $primary
+          //margin-left: 1em
+          //margin-right: 1em
+          font-weight: bold
+          +desktop
+            border-radius: .3em .3em 0 0
+
+        .plan-summary
+          +desktop
+            border-radius: 0 0 .3em .3em
+            box-shadow: 0 1rem 3rem 0 rgba(189,195,199,0.6)
+
+      &:not(.is-active)
+        .plan-summary
+          +desktop
+            border: 1px solid $grey-lighter
+            border-radius: .3em

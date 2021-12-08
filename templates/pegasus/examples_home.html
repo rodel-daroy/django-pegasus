@@ -1,0 +1,173 @@
+{% extends "pegasus/examples_base.html" %}
+{% load static %}
+{% block app %}
+<section class="app-card">
+  <h1 class="title">Examples Gallery</h1>
+  <h2 class="subtitle">
+    End-to-end, fully functional examples for your project's needs.
+  </h2>
+  <div class="columns">
+    <div class="column">
+      <div class="card h-100">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{% static 'images/undraw/undraw_credit_card.svg' %}" alt="Payments">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h3>Payments</h3>
+            <p>
+              Easily collect once-off credit card payments using Stripe
+              with this complete example.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="{% url 'pegasus:payments' %}" class="button is-primary is-outlined">
+              <span>View Payments</span>
+              <span class="icon">
+                <i className="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card h-100">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{% static 'images/pegasus/react-vue-icons.png' %}" alt="Object Demo">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h3>Object Lifecycle</h3>
+            <p>
+              A single-page front-end for manipulating objects implemented in both React and Vue.js.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="{% url 'pegasus:react_object_lifecycle' %}" class="button is-primary is-outlined">
+              <span>React Demo</span>
+              <span class="icon">
+                <i className="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card h-100">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{% static 'images/pegasus/celery-icon.png' %}" alt="Background Tasks">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h3>Background Tasks</h3>
+            <p>
+              Support background, long-running, or scheduled tasks easily with a working Celery
+              + front-end integration.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="{% url 'pegasus:tasks' %}" class="button is-primary is-outlined">
+              <span>View Tasks</span>
+              <span class="icon">
+                <i className="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <div class="card h-100">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{% static 'images/undraw/undraw_analytics.svg' %}" alt="Charts">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h3>Charts</h3>
+            <p>
+              Fully-integrated charts based on real data from your application.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="{% url 'pegasus:charts' %}" class="button is-primary is-outlined">
+              <span>View Charts</span>
+              <span class="icon">
+                <i className="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card h-100">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{% static 'images/pegasus/landing-page-screenshot-small.png' %}" alt="Landing Page">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h3>Landing Page</h3>
+            <p>
+              A beautiful, responsive, and easy-to-customize landing page to help
+              you tell your application's story.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="{% url 'pegasus:landing_page' %}" class="button is-primary is-outlined">
+              <span>View Landing Page</span>
+              <span class="icon">
+                <i className="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card h-100">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="{% static 'images/pegasus/pricing-page-screenshot-small.png' %}" alt="Pricing Page">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h3>Pricing Page</h3>
+            <p>
+              Communicate your application's value with a simple, flexible
+              pricing page.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="{% url 'pegasus:pricing_page' %}" class="button is-primary is-outlined">
+              <span>View Pricing Page</span>
+              <span class="icon">
+                <i className="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="has-text-centered content">
+    <p>
+      ...more coming soon!
+    </p>
+  </div>
+</section>
+{% endblock %}

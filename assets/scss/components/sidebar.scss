@@ -1,0 +1,75 @@
+.sidenav .active.nav-item .nav-link {
+  background-color: white !important;
+}
+.sidenav .nav-item a.nav-link:hover {
+  background-color: rgba(255, 57, 188, 0.2) !important;
+}
+.back-test {
+  background-color: brown;
+}
+.text-tools {
+  font-weight: 600;
+  font-size: 18px;
+  color: #d7d7d7;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+.navbar-vertical.navbar-expand-xs .navbar-nav .nav-link {
+  height: 60px;
+}
+
+.navbar-vertical.navbar-expand-xs {
+  max-width: 70px;
+}
+.nav-link-collapse {
+  height: 50px;
+}
+
+.padding-navbar-collapse {
+  padding-left: 10px;
+}
+
+.nav-link-text-collapse {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-link-text-principal {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.img-navbar {
+  width: 20;
+}
+
+.img-collapse {
+  width: 15;
+}
+
+.navbar-vertical
+  .navbar-nav
+  .nav-link[data-toggle="collapse"][aria-expanded="true"]:after {
+  color: rgba(255, 57, 188, 1);
+}
+.margin-left-pink {
+  width: 4px;
+  height: 60px;
+  position: absolute;
+  left: 0rem;
+  background-color: rgba(255, 57, 188, 1);
+}
+.margin-left-pink-collapse {
+  width: 5px;
+  height: 50px;
+  position: absolute;
+  left: 0rem;
+  background-color: rgba(255, 57, 188, 1);
+}
+.navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item > .nav-link.active {
+  margin-right: 0rem;
+  margin-left: 0rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0;
+}

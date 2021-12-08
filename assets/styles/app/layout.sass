@@ -1,0 +1,72 @@
+
+.navbar
+  box-shadow: $default-shadow
+  .navbar-item
+    &.is-active
+      +until($desktop)
+        background-color: inherit
+      +from($desktop)
+        border-bottom: 3px solid $navbar-item-active-color
+
+  // style avatar / profile picture in nav
+  img.avatar
+    height: 32px
+    width: 32px
+    border-radius: 50%
+    max-height: 32px
+
+.app-two-column
+  display: flex
+  // default to menu above content
+  flex-direction: column
+  // but display side-by-side if enough space
+  +from($tablet)
+    flex-direction: row
+
+#app-nav
+  +from($desktop)
+    min-width: 12em
+
+#app-content
+  flex-direction: row
+  width: 100%
+  +from($tablet)
+    // margin-left: 2em
+
+.app-card
+  margin-bottom: 1em
+  padding: 2em
+  width: 100%
+  border-radius: .3em
+  box-shadow: $default-shadow
+  // allow using "notification" class to override color styles
+  &:not(.notification)
+    background-color: white
+
+// for content-heavy things like blogs
+
+#content-main
+  max-width: 1152px
+
+#content-nav
+  +from($desktop)
+    min-width: 14em
+  +tablet-only()
+    min-width: 8em
+
+// these classes related to a sticky notification: https://coder-coder.com/sticky-header-animated/
+.notification
+  transition: padding 300ms ease
+  // override bulma adding a margin to notices
+  &.app-message
+    margin-bottom: .5rem
+  &.app-notice
+    margin-bottom: 0
+  &.sticky
+    position: fixed
+    width: 100%
+    top: 0
+    z-index: 1
+
+.sticky-offset
+  margin-top: 90px

@@ -1,0 +1,67 @@
+{% extends "web/app/app_base.html" %}
+{% load static %}
+{% block app %}
+<section class="section app-card">
+  <div class="columns columns-reversed">
+    <div class="column is-one-quarter">
+        <img src="{% static 'images/undraw/undraw_joyride.svg' %}" alt="Yay!">
+    </div>
+    <div class="column is-three-quarters">
+      <h1 class="title is-size-4">My Subscription</h1>
+      <h2 class="subtitle">You're subscribed to a plan. Thanks for the support!</h2>
+      {% if subscription %}
+        <p class="heading">Subscription Details</p>
+        <div id="subscription-details-table" class="my-2">
+           <div class="subscription-detail">
+             <div class="subscription-detail-label">
+               Current Subscription
+             </div>
+             <div class="subscription-detail-value">
+               <div class="tag is-success">{{ product.metadata.name }}</div>
+               <div class="subdetail">Since: {{ subscription.start.date }}</div>
+             </div>
+           </div>
+          <div class="subscription-detail">
+             <div class="subscription-detail-label">
+               Price
+             </div>
+             <div class="subscription-detail-value">
+               {{ subscription.plan.human_readable_price }}
+             </div>
+           </div>
+          <div class="subscription-detail">
+             <div class="subscription-detail-label">
+               Auto-Renew
+             </div>
+            <div class="subscription-detail-value">
+              {% if not subscription.cancel_at_period_end %}
+                <div class="tag is-info">
+                  Every
+                  {% if subscription.plan.interval_count != 1%}
+                    {{ subscription.plan.interval_count }} {{ subscription.plan.interval }}s
+                  {% else %}
+                    {{ subscription.plan.interval }}
+                  {% endif %}
+                </div>
+                <div class="subdetail">Next payment: {{ friendly_payment_amount }} on {{ subscription.current_period_end.date }}</div>
+              {% else %}
+                <div class="tag is-info">Off</div>
+              {% endif %}
+            </div>
+           </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if subscription %}
+  <form method="POST" action="{{ subscription_urls.create_stripe_portal_session }}">
+    {% csrf_token %}
+    <button type="submit" class="button is-outlined">Manage billing</button>
+  </form>
+  {% elif subscription.cancel_at_period_end %}
+  <p class="notification is-primary is-light">
+      Your current subscription will expire on {{ subscription.current_period_end.date }}.
+    </p>
+  {% endif %}
+</section>
+{% endblock %}

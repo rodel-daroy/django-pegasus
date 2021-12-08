@@ -1,0 +1,27 @@
+{% extends "mails/base.html" %} {% block body %}
+
+<tr>
+  <td class="tbody-container">
+    <table>
+      <tbody>
+        <tr>
+          <td class="td-container">
+            <h4 class="ff-cairo fs-20 fw-normal">
+              Hi {{ user.full_name }}, hope that you are fine
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-container">
+            <h4 class="ff-open-sans fs-16">
+              Welcome to Mailerrize, the place where you are going to be able to
+              control your email marketing
+            </h4>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+
+{% endblock %}

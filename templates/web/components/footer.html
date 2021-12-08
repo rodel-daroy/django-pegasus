@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      {{project_meta.NAME}} &mdash; Copyright <span id="copyright-year">2019</span>
+    </p>
+  </div>
+</footer>
+<script>
+    document.getElementById('copyright-year').innerText = (new Date()).getFullYear();
+</script>

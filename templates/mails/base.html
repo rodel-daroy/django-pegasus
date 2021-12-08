@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--IE compatibility-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile friendly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/emails.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Poppins&family=OpenSans&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            background-color: #f2f2f2;
+            width: 100%;
+        }
+        .content {
+            max-width: 600px; margin: 0 auto; font-size: 16px; line-height: 24px;
+        }
+        .ff-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .ff-cairo {
+            font-family: 'Cairo', sans-serif;
+        }
+        .ff-open-sans {
+            font-family: 'Open sans', sans-serif;
+        }
+        .fs-16 {
+            font-size: 16px;
+        }
+        .fs-18 {
+            font-size: 18px;
+        }
+        .fs-20 {
+            font-size: 20px;
+        }
+        .fs-25 {
+            font-size: 25px;
+        }
+        .fw-normal {
+            font-weight: 400;
+        }
+        .tc-black {
+            color: black;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .p-30 {
+            padding: 30px;
+        }
+        .logo-container{
+            padding-top: 0; padding-bottom: 20px; padding-left: 30px; text-align: center;
+        }
+        .tbody-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 0.375rem;
+        }
+        .td-container {
+            line-height: 24px;
+            word-break: break-word;
+        }
+        .button-reset {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            background-color: #e328af;
+            border-radius: 12px ;
+            border: 2px solid #e328af;
+        }
+        .a-reset {
+            background-color: #e328af;
+            border-radius: 12px ;
+            border: 2px solid #e328af;
+            min-width: 400px;
+            line-height: 40px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            font-family: 'Cairo';
+            text-transform: uppercase;
+            color: white !important;
+            text-align: center;
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    {% block header %}
+    {% include 'mails/components/header.html' %}
+    {% endblock %}
+    {% block body %}
+    {% endblock %}
+    {% block footer %}
+    {% include 'mails/components/footer.html' %}
+    {% endblock %}
+</body>
+
+</html>

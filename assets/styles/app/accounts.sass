@@ -1,0 +1,19 @@
+@import '../../node_modules/bulma/sass/utilities/initial-variables';
+
+
+img.socialicon
+  padding-right: .5em
+
+#fullpage-form-wrapper
+  display: flex
+  justify-content: center
+
+
+#fullpage-form
+  margin: 2em
+  padding: 2em
+  // on tablets make it a pop-up style form
+  +from($tablet)
+    border-radius: .3em
+    box-shadow: $default-shadow
+    background-color: $white

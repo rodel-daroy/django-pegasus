@@ -1,0 +1,23 @@
+{% load team_tags %}
+{% if request.team and request.user|is_admin_of:request.team %}
+  <li>
+      <a href="{% url 'web:team_admin' request.team.slug %}" {% if active_tab == 'team-admin' %}class="is-active"{% endif %}>
+          <span class="icon"><i class="fa fa-gear"></i></span><span class="is-hidden-tablet-only">Admin</span>
+      </a>
+  </li>
+
+
+  <li>
+      <a href="{% url 'subscriptions:team_subscription_demo' request.team.slug %}" {% if active_tab == 'subscription_demo' %}class="is-active"{% endif %}>
+          <span class="icon"><i class="fa fa-desktop"></i></span><span class="is-hidden-tablet-only">Subscription Demo</span>
+      </a>
+  </li>
+  <li>
+      <a href="{% url 'subscriptions:team_subscription_details' request.team.slug %}" {% if active_tab == 'subscription' %}class="is-active"{% endif %}>
+          <span class="icon"><i class="fa fa-repeat"></i></span><span class="is-hidden-tablet-only">Subscription</span>
+      </a>
+  </li>
+
+
+{% endif %}
+
